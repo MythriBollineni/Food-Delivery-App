@@ -1,0 +1,79 @@
+body{
+    margin:0;
+    background:#f5f5f5;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.success-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.success-card{
+    width:550px;
+    background:white;
+    border-radius:15px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.success-icon{
+    font-size:90px;
+    color:#28a745;
+    margin-bottom:20px;
+}
+
+.success-card h1{
+    color:#333;
+}
+
+.message{
+    font-size:18px;
+    color:#666;
+    margin:20px 0;
+}
+
+.delivery{
+    background:#f8f8f8;
+    padding:20px;
+    border-radius:10px;
+    margin:30px 0;
+    font-size:18px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.shop-btn,
+.history-btn{
+
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:8px;
+    color:white;
+    font-size:17px;
+    transition:.3s;
+
+}
+
+.shop-btn{
+    background:#ff6b00;
+}
+
+.shop-btn:hover{
+    background:#e65c00;
+}
+
+.history-btn{
+    background:#28a745;
+}
+
+.history-btn:hover{
+    background:#1e7e34;
+}
