@@ -10,9 +10,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.85) 100%), 
-                url("../images/banners/banner.jpg") no-repeat center center fixed;
-    background-size: cover;
+    background: radial-gradient(circle at 50% 50%, #111827 0%, #030712 100%) fixed;
     color: #f3f4f6;
     line-height: 1.6;
     overflow-x: hidden;
