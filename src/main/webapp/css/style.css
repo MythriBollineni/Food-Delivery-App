@@ -302,9 +302,16 @@ h1[align="center"], .menu-title {
     border-color: rgba(252, 128, 25, 0.2);
 }
 
+.restaurant-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
 .restaurant-card img {
     width: 100%;
-    height: 220px;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -332,7 +339,7 @@ h1[align="center"], .menu-title {
 
 .offer {
     position: absolute;
-    top: 170px;
+    bottom: 15px;
     left: 15px;
     background: linear-gradient(135deg, #FC8019 0%, #ff5e62 100%);
     color: #ffffff;
@@ -364,8 +371,7 @@ h1[align="center"], .menu-title {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 15px;
-    flex-wrap: wrap;
+    margin-bottom: 12px;
 }
 
 .rating {
@@ -379,9 +385,19 @@ h1[align="center"], .menu-title {
     align-items: center;
     gap: 5px;
     box-shadow: 0 4px 12px rgba(72, 196, 121, 0.2);
+    width: fit-content;
 }
 
-.restaurant-details p {
+.delivery-time {
+    font-size: 14px;
+    color: #4b5563;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.address {
     font-size: 14px;
     color: #6b7280;
     margin: 5px 0;

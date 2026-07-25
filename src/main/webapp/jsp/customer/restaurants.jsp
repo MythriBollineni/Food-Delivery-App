@@ -53,15 +53,17 @@ User loggedUser = (User) session.getAttribute("loggedUser");
         <% if (restaurants != null) { %>
             <% for(Restaurant restaurant : restaurants){ %>
                 <div class="restaurant-card">
-                    <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
+                    <div class="restaurant-image-container">
+                        <div class="heart">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
 
-                    <img src="${pageContext.request.contextPath}/images/restaurants/<%=restaurant.getImage()%>"
-                         alt="<%=restaurant.getRestaurantName()%>">
-                    
-                    <div class="offer">
-                        Flat 40% OFF
+                        <img src="${pageContext.request.contextPath}/images/restaurants/<%=restaurant.getImage()%>"
+                             alt="<%=restaurant.getRestaurantName()%>">
+                        
+                        <div class="offer">
+                            Flat 40% OFF
+                        </div>
                     </div>
 
                     <div class="restaurant-details">
@@ -71,13 +73,12 @@ User loggedUser = (User) session.getAttribute("loggedUser");
                             <div class="rating">
                                <i class="fa-solid fa-star"></i> <%=restaurant.getRating()%>
                             </div>
+                            <span class="delivery-time">
+                                <i class="fa-regular fa-clock"></i> <%=restaurant.getDeliveryTime()%>
+                            </span>
                         </div>
 
-                        <p>
-                            <i class="fa-regular fa-clock"></i> <%=restaurant.getDeliveryTime()%>
-                        </p>
-
-                        <p>
+                        <p class="address">
                             <i class="fa-solid fa-location-dot"></i> <%=restaurant.getAddress()%>
                         </p>
 
