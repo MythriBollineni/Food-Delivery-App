@@ -388,7 +388,33 @@ h1[align="center"], .menu-title {
     width: fit-content;
 }
 
+.rating-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(135deg, #48c479 0%, #3ca864 100%);
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 5;
+}
+
 .delivery-time {
+    font-size: 14px;
+    color: #4b5563;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.restaurant-phone {
     font-size: 14px;
     color: #4b5563;
     font-weight: 600;

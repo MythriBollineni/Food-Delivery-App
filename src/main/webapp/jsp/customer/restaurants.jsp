@@ -54,6 +54,10 @@ User loggedUser = (User) session.getAttribute("loggedUser");
             <% for(Restaurant restaurant : restaurants){ %>
                 <div class="restaurant-card">
                     <div class="restaurant-image-container">
+                        <div class="rating-badge">
+                            <i class="fa-solid fa-star"></i> <%=restaurant.getRating()%>
+                        </div>
+                        
                         <div class="heart">
                             <i class="fa-solid fa-heart"></i>
                         </div>
@@ -70,11 +74,11 @@ User loggedUser = (User) session.getAttribute("loggedUser");
                         <h3><%=restaurant.getRestaurantName()%></h3>
                         
                         <div class="restaurant-meta">
-                            <div class="rating">
-                               <i class="fa-solid fa-star"></i> <%=restaurant.getRating()%>
-                            </div>
                             <span class="delivery-time">
                                 <i class="fa-regular fa-clock"></i> <%=restaurant.getDeliveryTime()%>
+                            </span>
+                            <span class="restaurant-phone">
+                                <i class="fa-solid fa-phone"></i> <%=restaurant.getPhone()%>
                             </span>
                         </div>
 
