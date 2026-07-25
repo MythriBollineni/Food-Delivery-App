@@ -7,45 +7,118 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Customer Login - FoodNest</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f9fafb;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.75) 100%), 
+                url("${pageContext.request.contextPath}/images/banners/banner.jpg") no-repeat center center;
+    background-size: cover;
     padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background glowing blob for premium feel */
+body::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(252, 128, 25, 0.15);
+    border-radius: 50%;
+    filter: blur(80px);
+    top: 20%;
+    left: 30%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 94, 98, 0.15);
+    border-radius: 50%;
+    filter: blur(80px);
+    bottom: 20%;
+    right: 30%;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .container {
-    width: 420px;
-    background: #ffffff;
-    padding: 45px 35px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border: 1px solid #f1f2f4;
+    width: 100%;
+    max-width: 440px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 50px 40px;
+    border-radius: 28px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.icon {
-    font-size: 54px;
-    color: #FC8019;
-    margin-bottom: 15px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-container {
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #FC8019 0%, #ff5e62 100%);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 8px 20px rgba(252, 128, 25, 0.3);
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease;
+}
+
+.icon-wrapper:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.icon-wrapper i {
+    font-size: 38px;
+    color: #ffffff;
 }
 
 h2 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #1f2229;
+    font-size: 26px;
+    font-weight: 800;
+    color: #111827;
     margin-bottom: 30px;
+    letter-spacing: -0.5px;
 }
 
 .input-group {
@@ -56,102 +129,140 @@ h2 {
 .input-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
-    color: #555c66;
+    color: #374151;
+    letter-spacing: 0.2px;
 }
 
-.input-group input {
+.input-wrapper {
+    position: relative;
     width: 100%;
-    padding: 13px 18px;
-    border: 1px solid #e1e3e6;
-    border-radius: 10px;
-    font-size: 15px;
-    color: #2b2f38;
-    outline: none;
-    background-color: #fafbfc;
-    transition: all 0.2s ease;
 }
 
-.input-group input:focus {
+.input-wrapper .input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    font-size: 15px;
+    color: #111827;
+    background-color: rgba(249, 250, 251, 0.85);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus {
     border-color: #FC8019;
     background-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(252, 128, 25, 0.12);
+    box-shadow: 0 0 0 4px rgba(252, 128, 25, 0.12);
+}
+
+.input-wrapper input:focus + .input-icon {
+    color: #FC8019;
+    transform: translateY(-50%) scale(1.05);
 }
 
 button {
     width: 100%;
-    padding: 14px;
+    padding: 15px;
     border: none;
-    border-radius: 10px;
-    background-color: #FC8019;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #FC8019 0%, #ff5e62 100%);
     color: #ffffff;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(252, 128, 25, 0.2);
+    box-shadow: 0 6px 18px rgba(252, 128, 25, 0.25);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #e57010;
-    box-shadow: 0 4px 15px rgba(252, 128, 25, 0.35);
+    box-shadow: 0 8px 22px rgba(252, 128, 25, 0.4);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 .links {
     margin-top: 25px;
     font-size: 14px;
-    color: #687280;
+    color: #4b5563;
+    font-weight: 500;
 }
 
 .links a {
     text-decoration: none;
     color: #FC8019;
-    font-weight: 600;
+    font-weight: 700;
     transition: color 0.2s ease;
 }
 
 .links a:hover {
-    color: #e57010;
+    color: #ff5e62;
 }
 
 .footer {
-    margin-top: 30px;
+    margin-top: 35px;
     font-size: 13px;
-    color: #88909c;
-    border-top: 1px solid #f1f2f4;
-    padding-top: 15px;
+    color: #6b7280;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 18px;
+    font-weight: 500;
 }
 </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="icon">
-        <i class="fa-solid fa-bowl-food"></i>
+    <div class="logo-container">
+        <div class="icon-wrapper">
+            <i class="fa-solid fa-bowl-food"></i>
+        </div>
     </div>
 
     <h2>Customer Login</h2>
 
     <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
         <div class="input-group">
-            <label>Email</label>
-            <input type="email"
-                   name="email"
-                   placeholder="Enter your email"
-                   required>
+            <label for="email">Email</label>
+            <div class="input-wrapper">
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="Enter your email"
+                       required>
+                <i class="fa-regular fa-envelope input-icon"></i>
+            </div>
         </div>
 
         <div class="input-group">
-            <label>Password</label>
-            <input type="password"
-                   name="password"
-                   placeholder="Enter your password"
-                   required>
+            <label for="password">Password</label>
+            <div class="input-wrapper">
+                <input type="password"
+                       id="password"
+                       name="password"
+                       placeholder="Enter your password"
+                       required>
+                <i class="fa-solid fa-lock input-icon"></i>
+            </div>
         </div>
 
         <button type="submit">

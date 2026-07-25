@@ -8,13 +8,13 @@ pageEncoding="UTF-8"%>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Customer Registration - FoodNest</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 body {
@@ -22,132 +22,299 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f9fafb;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.75) 100%), 
+                url("${pageContext.request.contextPath}/images/banners/banner.jpg") no-repeat center center;
+    background-size: cover;
     padding: 40px 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background glowing blobs for premium feel */
+body::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(252, 128, 25, 0.15);
+    border-radius: 50%;
+    filter: blur(80px);
+    top: 15%;
+    left: 25%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 94, 98, 0.15);
+    border-radius: 50%;
+    filter: blur(80px);
+    bottom: 15%;
+    right: 25%;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .container {
-    width: 440px;
-    background: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 45px 35px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border: 1px solid #f1f2f4;
+    border-radius: 28px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.icon {
-    font-size: 54px;
-    color: #FC8019;
-    margin-bottom: 15px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-container {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #FC8019 0%, #ff5e62 100%);
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px auto;
+    box-shadow: 0 8px 20px rgba(252, 128, 25, 0.3);
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease;
+}
+
+.icon-wrapper:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.icon-wrapper i {
+    font-size: 32px;
+    color: #ffffff;
 }
 
 h2 {
     font-size: 24px;
-    font-weight: 700;
-    color: #1f2229;
-    margin-bottom: 30px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
 }
 
-input, textarea {
+.input-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #374151;
+    letter-spacing: 0.2px;
+}
+
+.input-wrapper {
+    position: relative;
     width: 100%;
-    padding: 13px 18px;
-    margin-bottom: 20px;
-    border: 1px solid #e1e3e6;
-    border-radius: 10px;
-    font-size: 15px;
-    color: #2b2f38;
-    outline: none;
-    background-color: #fafbfc;
-    transition: all 0.2s ease;
 }
 
-input:focus, textarea:focus {
+.input-wrapper .input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.address-wrapper .input-icon {
+    top: 20px;
+    transform: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 13px 16px 13px 48px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    font-size: 14px;
+    color: #111827;
+    background-color: rgba(249, 250, 251, 0.85);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper textarea {
+    width: 100%;
+    padding: 13px 16px 13px 48px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    font-size: 14px;
+    color: #111827;
+    background-color: rgba(249, 250, 251, 0.85);
+    outline: none;
+    resize: none;
+    height: 90px;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus, .input-wrapper textarea:focus {
     border-color: #FC8019;
     background-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(252, 128, 25, 0.12);
+    box-shadow: 0 0 0 4px rgba(252, 128, 25, 0.12);
 }
 
-textarea {
-    resize: none;
-    height: 100px;
-    font-family: inherit;
+.input-wrapper input:focus + .input-icon {
+    color: #FC8019;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.input-wrapper textarea:focus + .input-icon {
+    color: #FC8019;
+    transform: scale(1.05);
 }
 
 button {
     width: 100%;
     padding: 14px;
     border: none;
-    border-radius: 10px;
-    background-color: #FC8019;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #FC8019 0%, #ff5e62 100%);
     color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(252, 128, 25, 0.2);
+    box-shadow: 0 6px 18px rgba(252, 128, 25, 0.25);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    margin-top: 22px;
 }
 
 button:hover {
-    background-color: #e57010;
-    box-shadow: 0 4px 15px rgba(252, 128, 25, 0.35);
+    box-shadow: 0 8px 22px rgba(252, 128, 25, 0.4);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 .links {
-    margin-top: 25px;
+    margin-top: 20px;
     font-size: 14px;
-    color: #687280;
+    color: #4b5563;
+    font-weight: 500;
 }
 
 .links a {
     text-decoration: none;
     color: #FC8019;
-    font-weight: 600;
+    font-weight: 700;
     transition: color 0.2s ease;
 }
 
 .links a:hover {
-    color: #e57010;
+    color: #ff5e62;
 }
 </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="icon">
-        <i class="fa-solid fa-user-plus"></i>
+    <div class="logo-container">
+        <div class="icon-wrapper">
+            <i class="fa-solid fa-user-plus"></i>
+        </div>
     </div>
 
     <h2>Customer Registration</h2>
 
     <form action="${pageContext.request.contextPath}/RegisterServlet" method="post">
-        <input type="text"
-               name="name"
-               placeholder="Enter Name"
-               required>
+        <div class="input-group">
+            <label for="name">Full Name</label>
+            <div class="input-wrapper">
+                <input type="text"
+                       id="name"
+                       name="name"
+                       placeholder="Enter Name"
+                       required>
+                <i class="fa-regular fa-user input-icon"></i>
+            </div>
+        </div>
 
-        <input type="email"
-               name="email"
-               placeholder="Enter Email"
-               required>
+        <div class="input-group">
+            <label for="email">Email Address</label>
+            <div class="input-wrapper">
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="Enter Email"
+                       required>
+                <i class="fa-regular fa-envelope input-icon"></i>
+            </div>
+        </div>
 
-        <input type="password"
-               name="password"
-               placeholder="Enter Password"
-               required>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <div class="input-wrapper">
+                <input type="password"
+                       id="password"
+                       name="password"
+                       placeholder="Enter Password"
+                       required>
+                <i class="fa-solid fa-lock input-icon"></i>
+            </div>
+        </div>
 
-        <input type="text"
-               name="phone"
-               placeholder="Enter Phone Number"
-               required>
+        <div class="input-group">
+            <label for="phone">Phone Number</label>
+            <div class="input-wrapper">
+                <input type="text"
+                       id="phone"
+                       name="phone"
+                       placeholder="Enter Phone Number"
+                       required>
+                <i class="fa-solid fa-phone input-icon"></i>
+            </div>
+        </div>
 
-        <textarea name="address"
-                  rows="4"
-                  placeholder="Enter Address"></textarea>
+        <div class="input-group">
+            <label for="address">Delivery Address</label>
+            <div class="input-wrapper address-wrapper">
+                <textarea id="address"
+                          name="address"
+                          placeholder="Enter Address"
+                          required></textarea>
+                <i class="fa-solid fa-location-dot input-icon"></i>
+            </div>
+        </div>
 
         <button type="submit">
             <i class="fa-solid fa-user-plus"></i> Register
