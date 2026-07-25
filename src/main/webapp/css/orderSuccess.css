@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 body {
-    background-color: #f9fafb;
-    color: #2b2f38;
+    background: radial-gradient(circle at 50% 50%, #111827 0%, #030712 100%) fixed;
+    color: #f3f4f6;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .success-container {
@@ -23,12 +25,14 @@ body {
 .success-card {
     max-width: 550px;
     width: 100%;
-    background: #ffffff;
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
     padding: 50px 40px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    border: 1px solid #f1f2f4;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     animation: scaleUp 0.4s ease-out;
 }
 
@@ -62,15 +66,15 @@ body {
 }
 
 .success-card h1 {
-    color: #1f2229;
+    color: #ffffff;
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 12px;
 }
 
 .message {
     font-size: 15px;
-    color: #687280;
+    color: #cbd5e1;
     margin-bottom: 30px;
 }
 
@@ -79,7 +83,7 @@ body {
 }
 
 .delivery {
-    background-color: #fff8f3;
+    background-color: rgba(252, 128, 25, 0.08);
     border: 1px dashed rgba(252, 128, 25, 0.3);
     padding: 18px 24px;
     border-radius: 12px;
@@ -89,7 +93,7 @@ body {
 
 .delivery p {
     font-size: 15px;
-    color: #555c66;
+    color: #cbd5e1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,7 +106,7 @@ body {
 }
 
 .delivery p b {
-    color: #1f2229;
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -124,22 +128,23 @@ body {
 }
 
 .shop-btn {
-    background-color: #FC8019;
+    background: linear-gradient(135deg, #FC8019 0%, #ff5e62 100%);
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(252, 128, 25, 0.2);
 }
 
 .shop-btn:hover {
-    background-color: #e57010;
+    background: linear-gradient(135deg, #e57010 0%, #FC8019 100%);
     box-shadow: 0 4px 15px rgba(252, 128, 25, 0.35);
 }
 
 .history-btn {
-    background-color: #f1f2f4;
-    color: #555c66;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .history-btn:hover {
-    background-color: #e1e3e6;
-    color: #1f2229;
+    background-color: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
 }

@@ -5,11 +5,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 body {
-    background-color: #f7f9fc;
-    color: #1f2937;
+    background: radial-gradient(circle at 50% 50%, #111827 0%, #030712 100%) fixed;
+    color: #f3f4f6;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -17,15 +20,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(17, 24, 39, 0.7);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 16px 8%;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -52,7 +55,7 @@ body {
     margin: 40px 0 20px 0;
     font-size: 36px;
     font-weight: 800;
-    color: #111827;
+    color: #ffffff;
 }
 
 /* Container */
@@ -68,18 +71,20 @@ body {
 /* Cards */
 .address-card,
 .summary-card {
-    background: #ffffff;
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
 }
 
 .address-card h2,
 .summary-card h2 {
     font-size: 22px;
     font-weight: 800;
-    color: #111827;
+    color: #ffffff;
     margin-bottom: 30px;
     display: flex;
     align-items: center;
@@ -97,21 +102,26 @@ body {
     width: 100%;
     padding: 16px 20px;
     margin-bottom: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     font-size: 15px;
-    color: #1f2937;
+    color: #ffffff;
     outline: none;
-    background-color: #f9fafb;
+    background-color: rgba(255, 255, 255, 0.05);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.address-card input::placeholder,
+.address-card textarea::placeholder {
+    color: #94a3b8;
 }
 
 .address-card input:focus,
 .address-card textarea:focus,
 .summary-card select:focus {
     border-color: #FC8019;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(252, 128, 25, 0.1);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(252, 128, 25, 0.15);
 }
 
 .address-card textarea {
@@ -120,18 +130,24 @@ body {
     font-family: inherit;
 }
 
+/* Style select options background in dark theme */
+.summary-card select option {
+    background-color: #111827;
+    color: #ffffff;
+}
+
 /* Summary Details */
 .summary-row {
     display: flex;
     justify-content: space-between;
     margin: 16px 0;
     font-size: 16px;
-    color: #4b5563;
+    color: #cbd5e1;
 }
 
 hr {
     border: 0;
-    border-top: 1px solid rgba(0,0,0,0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     margin: 20px 0;
 }
 
@@ -148,7 +164,7 @@ hr {
     margin-bottom: 12px;
     font-weight: 600;
     font-size: 15px;
-    color: #1f2937;
+    color: #cbd5e1;
 }
 
 /* Place Button */

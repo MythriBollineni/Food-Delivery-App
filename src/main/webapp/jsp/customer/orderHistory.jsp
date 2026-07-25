@@ -53,7 +53,7 @@ User loggedUser = (User) session.getAttribute("loggedUser");
                 <div class="order-card">
                     <div class="order-header">
                         <h2>Order #<%=order.getOrderId()%></h2>
-                        <span class="status">
+                        <span class="status <%=order.getOrderStatus().toLowerCase()%>">
                             <%=order.getOrderStatus()%>
                         </span>
                     </div>
