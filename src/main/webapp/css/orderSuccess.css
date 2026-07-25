@@ -1,79 +1,145 @@
-body{
-    margin:0;
-    background:#f5f5f5;
-    font-family:Arial, Helvetica, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.success-container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+body {
+    background-color: #f9fafb;
+    color: #2b2f38;
 }
 
-.success-card{
-    width:550px;
-    background:white;
-    border-radius:15px;
-    padding:40px;
-    text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
+.success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
 
-.success-icon{
-    font-size:90px;
-    color:#28a745;
-    margin-bottom:20px;
+.success-card {
+    max-width: 550px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f1f2f4;
+    animation: scaleUp 0.4s ease-out;
 }
 
-.success-card h1{
-    color:#333;
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-.message{
-    font-size:18px;
-    color:#666;
-    margin:20px 0;
+.success-icon {
+    font-size: 80px;
+    color: #48c479;
+    margin-bottom: 25px;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s both;
 }
 
-.delivery{
-    background:#f8f8f8;
-    padding:20px;
-    border-radius:10px;
-    margin:30px 0;
-    font-size:18px;
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
+.success-card h1 {
+    color: #1f2229;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.message {
+    font-size: 15px;
+    color: #687280;
+    margin-bottom: 30px;
+}
+
+.message b {
+    color: #FC8019;
+}
+
+.delivery {
+    background-color: #fff8f3;
+    border: 1px dashed rgba(252, 128, 25, 0.3);
+    padding: 18px 24px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+    display: inline-block;
+}
+
+.delivery p {
+    font-size: 15px;
+    color: #555c66;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.delivery p i {
+    color: #FC8019;
+    font-size: 18px;
+}
+
+.delivery p b {
+    color: #1f2229;
+    font-weight: 600;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .shop-btn,
-.history-btn{
-
-    text-decoration:none;
-    padding:14px 28px;
-    border-radius:8px;
-    color:white;
-    font-size:17px;
-    transition:.3s;
-
+.history-btn {
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
 
-.shop-btn{
-    background:#ff6b00;
+.shop-btn {
+    background-color: #FC8019;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(252, 128, 25, 0.2);
 }
 
-.shop-btn:hover{
-    background:#e65c00;
+.shop-btn:hover {
+    background-color: #e57010;
+    box-shadow: 0 4px 15px rgba(252, 128, 25, 0.35);
 }
 
-.history-btn{
-    background:#28a745;
+.history-btn {
+    background-color: #f1f2f4;
+    color: #555c66;
 }
 
-.history-btn:hover{
-    background:#1e7e34;
+.history-btn:hover {
+    background-color: #e1e3e6;
+    color: #1f2229;
 }
