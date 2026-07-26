@@ -13,7 +13,7 @@ User loggedUser = (User) session.getAttribute("loggedUser");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shopping Cart - FoodNest</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/cart.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/cart.css?v=1.1">
 </head>
 <body class="cart-page">
 
