@@ -22,9 +22,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.75) 100%), 
-                url("${pageContext.request.contextPath}/images/banners/banner.jpg") no-repeat center center;
-    background-size: cover;
+    background: 
+        radial-gradient(circle at 15% 15%, rgba(252, 128, 25, 0.22) 0%, transparent 50%),
+        radial-gradient(circle at 85% 20%, rgba(255, 94, 98, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(252, 128, 25, 0.08) 0%, transparent 60%),
+        linear-gradient(135deg, rgba(13, 10, 9, 0.92) 0%, rgba(5, 4, 4, 0.96) 100%),
+        url("${pageContext.request.contextPath}/images/banners/banner.jpg") no-repeat center center fixed;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, cover;
     padding: 40px 20px;
     position: relative;
     overflow-x: hidden;
@@ -62,13 +66,13 @@ body::after {
 .container {
     width: 100%;
     max-width: 480px;
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.07);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 45px 35px;
     border-radius: 28px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
     position: relative;
     z-index: 1;
@@ -117,7 +121,7 @@ body::after {
 h2 {
     font-size: 24px;
     font-weight: 800;
-    color: #111827;
+    color: #ffffff;
     margin-bottom: 25px;
     letter-spacing: -0.5px;
 }
@@ -132,7 +136,7 @@ h2 {
     margin-bottom: 6px;
     font-weight: 600;
     font-size: 13px;
-    color: #374151;
+    color: #cbd5e1;
     letter-spacing: 0.2px;
 }
 
@@ -159,11 +163,11 @@ h2 {
 .input-wrapper input {
     width: 100%;
     padding: 13px 16px 13px 48px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     font-size: 14px;
-    color: #111827;
-    background-color: rgba(249, 250, 251, 0.85);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
     outline: none;
     transition: all 0.3s ease;
 }
@@ -171,11 +175,11 @@ h2 {
 .input-wrapper textarea {
     width: 100%;
     padding: 13px 16px 13px 48px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     font-size: 14px;
-    color: #111827;
-    background-color: rgba(249, 250, 251, 0.85);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
     outline: none;
     resize: none;
     height: 90px;
@@ -184,8 +188,8 @@ h2 {
 
 .input-wrapper input:focus, .input-wrapper textarea:focus {
     border-color: #FC8019;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(252, 128, 25, 0.12);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 4px rgba(252, 128, 25, 0.2);
 }
 
 .input-wrapper input:focus + .input-icon {
@@ -229,7 +233,7 @@ button:active {
 .links {
     margin-top: 20px;
     font-size: 14px;
-    color: #4b5563;
+    color: #9ca3af;
     font-weight: 500;
 }
 
