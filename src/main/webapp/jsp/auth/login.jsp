@@ -452,7 +452,7 @@ body {
             </ul>
         </div>
         <div class="promo-image-wrapper">
-            <img src="${pageContext.request.contextPath}/images/foods/chicken.jpg" alt="Delicious Salad" class="promo-image">
+            <img src="${pageContext.request.contextPath}/images/foods/pizza.jpg" alt="Delicious Salad" class="promo-image">
         </div>
         
         <!-- Center absolute 50% OFF badge -->

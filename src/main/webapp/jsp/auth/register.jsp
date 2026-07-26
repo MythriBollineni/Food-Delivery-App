@@ -447,7 +447,7 @@ body {
             </ul>
         </div>
         <div class="promo-image-wrapper">
-            <img src="${pageContext.request.contextPath}/images/foods/chicken.jpg" alt="Delicious Salad" class="promo-image">
+            <img src="${pageContext.request.contextPath}/images/foods/pizza.jpg" alt="Delicious Salad" class="promo-image">
         </div>
         
         <!-- Center absolute 50% OFF badge -->
@@ -541,6 +541,9 @@ body {
             <div class="social-buttons">
                 <button class="social-btn google">
                     <i class="fa-brands fa-google"></i> Continue with Google
+                </button>
+                <button class="social-btn facebook">
+                    <i class="fa-brands fa-facebook-f"></i> Continue with Facebook
                 </button>
             </div>
         </div>

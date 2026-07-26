@@ -81,8 +81,8 @@ int totalItems = cart.getItems().size();
                     %>
                         <div style="display: flex; justify-content: space-between; align-items: center; background: #FAF9F6; padding: 15px 20px; border-radius: 16px; border: 1px solid rgba(26,22,21,0.04);">
                             <div>
-                                <h4 style="font-size: 15px; font-weight: 700; color: #1A1615; margin-bottom: 2px;"><%= item.getName() %></h4>
-                                <span style="font-size: 12px; color: #6B625E;">freshly prepared dish • Item #<%= item.getItemId() %></span>
+                                <h4 style="font-size: 15px; font-weight: 700; color: #1A1615; margin-bottom: 2px;"><%= item.getItemName() %></h4>
+                                <span style="font-size: 12px; color: #6B625E;">freshly prepared dish • Item #<%= item.getMenuId() %></span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 20px;">
                                 <span style="color: #E23744; font-weight: 700; font-size: 14px;"><%= item.getQuantity() %>x</span>
