@@ -35,6 +35,7 @@ protected void doGet(HttpServletRequest request,
     }
 
     String menuIdParam = request.getParameter("menuId");
+    String action = request.getParameter("action");
 
     // User clicked only "Cart"
     if (menuIdParam == null) {
@@ -45,24 +46,34 @@ protected void doGet(HttpServletRequest request,
 
     int menuId = Integer.parseInt(menuIdParam);
 
-    MenuDAO menuDAO = new MenuDAO();
+    if ("update".equalsIgnoreCase(action)) {
+        String quantityParam = request.getParameter("quantity");
+        if (quantityParam != null) {
+            int quantity = Integer.parseInt(quantityParam);
+            cart.updateQuantity(menuId, quantity);
+        }
+    } else if ("remove".equalsIgnoreCase(action)) {
+        cart.removeItem(menuId);
+    } else {
+        // default: add item
+        MenuDAO menuDAO = new MenuDAO();
+        Menu menu = menuDAO.getMenuById(menuId);
 
-    Menu menu = menuDAO.getMenuById(menuId);
+        if (menu == null) {
+            response.sendRedirect(request.getContextPath()
+                    + "/RestaurantServlet");
+            return;
+        }
 
-    if (menu == null) {
-        response.sendRedirect(request.getContextPath()
-                + "/RestaurantServlet");
-        return;
+        CartItem item = new CartItem(
+                menu.getMenuId(),
+                menu.getItemName(),
+                menu.getPrice(),
+                1,
+                menu.getImage());
+
+        cart.addItem(item);
     }
-
-    CartItem item = new CartItem(
-            menu.getMenuId(),
-            menu.getItemName(),
-            menu.getPrice(),
-            1,
-            menu.getImage());
-
-    cart.addItem(item);
 
     session.setAttribute("cart", cart);
 

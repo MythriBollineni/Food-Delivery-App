@@ -30,6 +30,20 @@ public class Cart {
 
     }
 
+    public void updateQuantity(int menuId, int quantity) {
+        if (items.containsKey(menuId)) {
+            if (quantity <= 0) {
+                items.remove(menuId);
+            } else {
+                items.get(menuId).setQuantity(quantity);
+            }
+        }
+    }
+
+    public void removeItem(int menuId) {
+        items.remove(menuId);
+    }
+
     public double getGrandTotal(){
 
         double total = 0;

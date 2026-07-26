@@ -22,122 +22,157 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: 
-        radial-gradient(circle at 15% 15%, rgba(252, 128, 25, 0.22) 0%, transparent 50%),
-        radial-gradient(circle at 85% 20%, rgba(255, 94, 98, 0.18) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(252, 128, 25, 0.08) 0%, transparent 60%),
-        linear-gradient(135deg, rgba(13, 10, 9, 0.92) 0%, rgba(5, 4, 4, 0.96) 100%),
-        url("${pageContext.request.contextPath}/images/banners/banner.jpg") no-repeat center center fixed;
-    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, cover;
+    background-color: #FAF6F0; /* Soft beige background */
     padding: 40px 20px;
-    position: relative;
     overflow-x: hidden;
 }
 
-/* Background glowing blobs for premium feel */
-body::before {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: rgba(252, 128, 25, 0.15);
-    border-radius: 50%;
-    filter: blur(80px);
-    top: 15%;
-    left: 25%;
-    z-index: 0;
-    pointer-events: none;
-}
-
-body::after {
-    content: '';
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background: rgba(255, 94, 98, 0.15);
-    border-radius: 50%;
-    filter: blur(80px);
-    bottom: 15%;
-    right: 25%;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.container {
+.split-container {
+    display: flex;
     width: 100%;
-    max-width: 480px;
-    background: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 45px 35px;
+    max-width: 960px;
+    height: 720px; /* Taller for registration fields */
+    background: #ffffff;
     border-radius: 28px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 20px 50px rgba(26, 22, 21, 0.08);
+    border: 1px solid rgba(26, 22, 21, 0.05);
+    overflow: hidden;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Left Panel */
+.promo-panel {
+    width: 50%;
+    background-color: #FDFBF7; /* Slightly lighter cream */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(26, 22, 21, 0.04);
 }
 
-.logo-container {
-    margin-bottom: 20px;
-    display: inline-block;
+.promo-panel .logo {
+    font-size: 24px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #E23744 0%, #F47B20 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.icon-wrapper {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, #FC8019 0%, #ff5e62 100%);
-    border-radius: 18px;
+.promo-panel .logo i {
+    color: #E23744;
+    -webkit-text-fill-color: initial;
+}
+
+.promo-content h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1A1615;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.promo-content .tagline {
+    font-size: 16px;
+    color: #E23744;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.features li {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.feat-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(226, 55, 68, 0.1);
+    color: #E23744;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 10px auto;
-    box-shadow: 0 8px 20px rgba(252, 128, 25, 0.3);
-    transform: rotate(-5deg);
-    transition: transform 0.3s ease;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
-.icon-wrapper:hover {
-    transform: rotate(0deg) scale(1.05);
+.feat-text {
+    display: flex;
+    flex-direction: column;
 }
 
-.icon-wrapper i {
-    font-size: 32px;
-    color: #ffffff;
+.feat-text strong {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1A1615;
 }
 
-h2 {
-    font-size: 24px;
+.feat-text span {
+    font-size: 13px;
+    color: #6B625E;
+}
+
+.promo-image-wrapper {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 0 8px 24px rgba(26, 22, 21, 0.06);
+}
+
+.promo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right Panel */
+.form-panel {
+    width: 50%;
+    padding: 40px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+.form-header h2 {
+    font-size: 28px;
     font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 25px;
-    letter-spacing: -0.5px;
+    color: #1A1615;
+    margin-bottom: 6px;
+}
+
+.form-header p {
+    font-size: 14px;
+    color: #6B625E;
+    margin-bottom: 20px;
 }
 
 .input-group {
-    margin-bottom: 18px;
-    text-align: left;
+    margin-bottom: 14px;
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-weight: 600;
     font-size: 13px;
-    color: #cbd5e1;
-    letter-spacing: 0.2px;
+    color: #1A1615;
 }
 
 .input-wrapper {
@@ -150,9 +185,9 @@ h2 {
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    color: #9ca3af;
+    color: #9CA3AF;
     font-size: 15px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .address-wrapper .input-icon {
@@ -162,172 +197,224 @@ h2 {
 
 .input-wrapper input {
     width: 100%;
-    padding: 13px 16px 13px 48px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 11px 16px 11px 44px;
+    border: 1px solid rgba(26, 22, 21, 0.12);
     border-radius: 12px;
     font-size: 14px;
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.05);
+    color: #1A1615;
+    background-color: #FAF9F6;
     outline: none;
     transition: all 0.3s ease;
 }
 
 .input-wrapper textarea {
     width: 100%;
-    padding: 13px 16px 13px 48px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 11px 16px 11px 44px;
+    border: 1px solid rgba(26, 22, 21, 0.12);
     border-radius: 12px;
     font-size: 14px;
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.05);
+    color: #1A1615;
+    background-color: #FAF9F6;
     outline: none;
     resize: none;
-    height: 90px;
+    height: 70px;
     transition: all 0.3s ease;
 }
 
 .input-wrapper input:focus, .input-wrapper textarea:focus {
-    border-color: #FC8019;
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 0 4px rgba(252, 128, 25, 0.2);
+    border-color: #E23744;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(226, 55, 68, 0.1);
 }
 
-.input-wrapper input:focus + .input-icon {
-    color: #FC8019;
-    transform: translateY(-50%) scale(1.05);
-}
-
-.input-wrapper textarea:focus + .input-icon {
-    color: #FC8019;
-    transform: scale(1.05);
+.input-wrapper input:focus + .input-icon, .input-wrapper textarea:focus + .input-icon {
+    color: #E23744;
 }
 
 button {
     width: 100%;
-    padding: 14px;
+    padding: 13px;
     border: none;
     border-radius: 12px;
-    background: linear-gradient(135deg, #FC8019 0%, #ff5e62 100%);
+    background: linear-gradient(135deg, #E23744 0%, #F47B20 100%);
     color: #ffffff;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(252, 128, 25, 0.25);
+    box-shadow: 0 6px 18px rgba(226, 55, 68, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
     transition: all 0.3s ease;
-    margin-top: 22px;
+    margin-top: 15px;
 }
 
 button:hover {
-    box-shadow: 0 8px 22px rgba(252, 128, 25, 0.4);
-    transform: translateY(-2px);
-}
-
-button:active {
-    transform: translateY(0);
+    box-shadow: 0 8px 22px rgba(226, 55, 68, 0.3);
+    transform: translateY(-1px);
 }
 
 .links {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #9ca3af;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #6B625E;
+    text-align: center;
     font-weight: 500;
 }
 
 .links a {
     text-decoration: none;
-    color: #FC8019;
+    color: #E23744;
     font-weight: 700;
-    transition: color 0.2s ease;
 }
 
 .links a:hover {
-    color: #ff5e62;
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column;
+        height: auto;
+        max-width: 440px;
+    }
+    .promo-panel {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(26, 22, 21, 0.04);
+        padding: 30px;
+    }
+    .form-panel {
+        width: 100%;
+        padding: 35px 30px;
+    }
+    .promo-image-wrapper {
+        display: none;
+    }
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="logo-container">
-        <div class="icon-wrapper">
-            <i class="fa-solid fa-user-plus"></i>
+<div class="split-container">
+    <!-- Left Panel (Showcase) -->
+    <div class="promo-panel">
+        <div class="brand">
+            <a href="${pageContext.request.contextPath}/jsp/customer/home.jsp" class="logo">
+                <i class="fa-solid fa-bowl-food"></i> FoodNest
+            </a>
+        </div>
+        <div class="promo-content">
+            <h1>Good food, great mood, better life.</h1>
+            <p class="tagline">Eat healthy, live happy.</p>
+            
+            <ul class="features">
+                <li>
+                    <div class="feat-icon"><i class="fa-solid fa-check"></i></div>
+                    <div class="feat-text">
+                        <strong>100% Fresh Ingredients</strong>
+                        <span>Carefully selected for your health</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="feat-icon"><i class="fa-solid fa-check"></i></div>
+                    <div class="feat-text">
+                        <strong>Healthy & Delicious</strong>
+                        <span>Nutritious treats you'll love</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="feat-icon"><i class="fa-solid fa-check"></i></div>
+                    <div class="feat-text">
+                        <strong>Fast & Hot Delivery</strong>
+                        <span>Delivered fresh to your doorstep</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="promo-image-wrapper">
+            <img src="${pageContext.request.contextPath}/images/foods/pizza.jpg" alt="Delicious Pizza" class="promo-image">
         </div>
     </div>
-
-    <h2>Customer Registration</h2>
-
-    <form action="${pageContext.request.contextPath}/RegisterServlet" method="post">
-        <div class="input-group">
-            <label for="name">Full Name</label>
-            <div class="input-wrapper">
-                <input type="text"
-                       id="name"
-                       name="name"
-                       placeholder="Enter Name"
-                       required>
-                <i class="fa-regular fa-user input-icon"></i>
-            </div>
+    
+    <!-- Right Panel (Form) -->
+    <div class="form-panel">
+        <div class="form-header">
+            <h2>Create Account</h2>
+            <p>Sign up to start ordering your favourite food.</p>
         </div>
-
-        <div class="input-group">
-            <label for="email">Email Address</label>
-            <div class="input-wrapper">
-                <input type="email"
-                       id="email"
-                       name="email"
-                       placeholder="Enter Email"
-                       required>
-                <i class="fa-regular fa-envelope input-icon"></i>
+        
+        <form action="${pageContext.request.contextPath}/RegisterServlet" method="post">
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <div class="input-wrapper">
+                    <input type="text"
+                           id="name"
+                           name="name"
+                           placeholder="Enter Name"
+                           required>
+                    <i class="fa-regular fa-user input-icon"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="input-group">
-            <label for="password">Password</label>
-            <div class="input-wrapper">
-                <input type="password"
-                       id="password"
-                       name="password"
-                       placeholder="Enter Password"
-                       required>
-                <i class="fa-solid fa-lock input-icon"></i>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <div class="input-wrapper">
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           placeholder="Enter Email"
+                           required>
+                    <i class="fa-regular fa-envelope input-icon"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="input-group">
-            <label for="phone">Phone Number</label>
-            <div class="input-wrapper">
-                <input type="text"
-                       id="phone"
-                       name="phone"
-                       placeholder="Enter Phone Number"
-                       required>
-                <i class="fa-solid fa-phone input-icon"></i>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <input type="password"
+                           id="password"
+                           name="password"
+                           placeholder="Enter Password"
+                           required>
+                    <i class="fa-solid fa-lock input-icon"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="input-group">
-            <label for="address">Delivery Address</label>
-            <div class="input-wrapper address-wrapper">
-                <textarea id="address"
-                          name="address"
-                          placeholder="Enter Address"
-                          required></textarea>
-                <i class="fa-solid fa-location-dot input-icon"></i>
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <div class="input-wrapper">
+                    <input type="text"
+                           id="phone"
+                           name="phone"
+                           placeholder="Enter Phone Number"
+                           required>
+                    <i class="fa-solid fa-phone input-icon"></i>
+                </div>
             </div>
+
+            <div class="input-group">
+                <label for="address">Delivery Address</label>
+                <div class="input-wrapper address-wrapper">
+                    <textarea id="address"
+                              name="address"
+                              placeholder="Enter Address"
+                              required></textarea>
+                    <i class="fa-solid fa-location-dot input-icon"></i>
+                </div>
+            </div>
+
+            <button type="submit">
+                <i class="fa-solid fa-user-plus"></i> Register
+            </button>
+        </form>
+        
+        <div class="links">
+            Already have an account? 
+            <a href="<%=request.getContextPath()%>/jsp/auth/login.jsp">Login</a>
         </div>
-
-        <button type="submit">
-            <i class="fa-solid fa-user-plus"></i> Register
-        </button>
-    </form>
-
-    <div class="links">
-        Already have an account? 
-        <a href="<%=request.getContextPath()%>/jsp/auth/login.jsp">Login</a>
     </div>
 </div>
 

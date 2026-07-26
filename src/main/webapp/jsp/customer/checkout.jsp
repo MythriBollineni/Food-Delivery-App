@@ -10,6 +10,10 @@ if(cart==null){
 }
 
 User loggedUser = (User) session.getAttribute("loggedUser");
+double subtotal = cart.getGrandTotal();
+double deliveryFee = subtotal >= 500 ? 0 : 40;
+double taxes = Math.round((subtotal * 0.05) * 100.0) / 100.0;
+double grandTotal = subtotal + deliveryFee + taxes;
 %>
 
 <!DOCTYPE html>
@@ -19,7 +23,7 @@ User loggedUser = (User) session.getAttribute("loggedUser");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checkout - FoodNest</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/checkout.css?v=1.1">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/checkout.css?v=1.2">
 </head>
 <body class="checkout-page">
 
@@ -34,58 +38,52 @@ User loggedUser = (User) session.getAttribute("loggedUser");
 
     <div class="checkout-container">
 
-        <!-- Left Side -->
+        <!-- Left Side: Address Details -->
         <div class="address-card">
             <h2>
                 <i class="fa-solid fa-location-dot"></i>
-                Delivery Address
+                Delivery Details
             </h2>
-            <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="Mobile Number">
-            <textarea placeholder="Delivery Address"></textarea>
+            <input type="text" placeholder="Full Name" value="<%= loggedUser != null ? loggedUser.getName() : "" %>" required>
+            <input type="text" placeholder="Mobile Number" value="<%= loggedUser != null ? loggedUser.getPhone() : "" %>" required>
+            <textarea placeholder="Delivery Address" required><%= loggedUser != null ? loggedUser.getAddress() : "" %></textarea>
         </div>
 
-        <!-- Right Side -->
+        <!-- Right Side: Order Summary & Place Order -->
         <div class="summary-card">
             <h2>Order Summary</h2>
 
             <div class="summary-row">
                 <span>Subtotal</span>
-                <span>&#8377; <%=String.format("%.0f",cart.getGrandTotal())%></span>
+                <span>&#8377; <%=String.format("%.2f", subtotal)%></span>
             </div>
 
             <div class="summary-row">
                 <span>Delivery Fee</span>
-                <span>&#8377; 40</span>
+                <span><%= deliveryFee == 0 ? "FREE" : "&#8377; " + String.format("%.2f", deliveryFee) %></span>
             </div>
 
             <div class="summary-row">
-                <span>GST</span>
-                <span>&#8377; 20</span>
+                <span>Taxes & Packaging</span>
+                <span>&#8377; <%=String.format("%.2f", taxes)%></span>
             </div>
 
             <hr>
 
             <div class="summary-row total">
-                <span>Grand Total</span>
-                <span>&#8377; <%=String.format("%.0f",cart.getGrandTotal()+60)%></span>
+                <span>Total</span>
+                <span>&#8377; <%=String.format("%.2f", grandTotal)%></span>
             </div>
 
             <form action="${pageContext.request.contextPath}/OrderServlet" method="post">
                 <label class="payment-label">
-                    Payment Method
+                    Select Payment Mode
                 </label>
 
-                <select name="paymentMethod">
-                    <option value="Cash On Delivery">
-                        Cash On Delivery
-                    </option>
-                    <option value="UPI">
-                        UPI
-                    </option>
-                    <option value="Card">
-                        Card
-                    </option>
+                <select name="paymentMethod" required>
+                    <option value="Cash On Delivery">Cash On Delivery</option>
+                    <option value="UPI">UPI / Google Pay</option>
+                    <option value="Card">Credit / Debit Card</option>
                 </select>
 
                 <input type="submit"
