@@ -113,6 +113,8 @@
     display: flex;
 }
 
+/* Highly specific selectors to prevent navbar specificity overrides */
+ul.nav-links li.profile-dropdown-container .profile-dropdown-menu a,
 .profile-dropdown-menu a {
     color: #1A1615 !important;
     padding: 12px 20px !important;
@@ -128,16 +130,19 @@
     border-bottom: none !important;
 }
 
+ul.nav-links li.profile-dropdown-container .profile-dropdown-menu a i,
 .profile-dropdown-menu a i {
-    color: #6B625E !important; /* Muted gray for menu icons for perfect style */
-    transition: color 0.2s ease;
+    color: #6B625E !important; /* Muted gray for menu icons */
+    transition: color 0.2s ease !important;
 }
 
+ul.nav-links li.profile-dropdown-container .profile-dropdown-menu a:hover,
 .profile-dropdown-menu a:hover {
     background: rgba(230, 90, 40, 0.08) !important;
     color: #E65A28 !important;
 }
 
+ul.nav-links li.profile-dropdown-container .profile-dropdown-menu a:hover i,
 .profile-dropdown-menu a:hover i {
     color: #E65A28 !important;
 }
