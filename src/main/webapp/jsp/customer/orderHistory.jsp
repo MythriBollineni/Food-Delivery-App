@@ -21,6 +21,7 @@ if (orders != null) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Orders - FoodNest</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/navbar.css?v=1.0">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/orderHistory.css?v=1.2">
 <style>
 .orders-page {

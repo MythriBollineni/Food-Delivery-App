@@ -23,6 +23,7 @@ if (allRests != null) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FoodNest - Delicious Food Delivered</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/navbar.css?v=1.0">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=1.2">
 <style>
 .home-page {
@@ -356,7 +357,7 @@ if (allRests != null) {
         </a>
 
         <ul class="nav-links">
-            <li><a href="${pageContext.request.contextPath}/jsp/customer/home.jsp"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li class="active"><a href="${pageContext.request.contextPath}/jsp/customer/home.jsp"><i class="fa-solid fa-house"></i> Home</a></li>
             <li><a href="${pageContext.request.contextPath}/RestaurantServlet"><i class="fa-solid fa-utensils"></i> Restaurants</a></li>
             <li><a href="${pageContext.request.contextPath}/CartServlet"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
             <% if (loggedUser != null) { %>

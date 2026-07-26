@@ -23,6 +23,7 @@ if (loggedUser != null) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Order Successful - FoodNest</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/navbar.css?v=1.0">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/orderSuccess.css?v=1.2">
 <style>
 .success-card-details {
@@ -105,7 +106,7 @@ if (loggedUser != null) {
 <body class="success-page">
 
     <!-- Navbar -->
-    <nav class="navbar" style="width: 100%; position: absolute; top: 0; left: 0;">
+    <nav class="navbar">
         <a href="${pageContext.request.contextPath}/jsp/customer/home.jsp" class="logo">
             <i class="fa-solid fa-bowl-food"></i> FoodNest
         </a>

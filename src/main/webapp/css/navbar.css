@@ -1,0 +1,147 @@
+/* Navbar General Style */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1A1615; /* Sleek charcoal background */
+    padding: 15px 8%;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(26, 22, 21, 0.15);
+    width: 100%;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #FAF6F0; /* Soft Warm Linen */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar .logo i {
+    color: #E23744; /* Brand red */
+}
+
+.navbar .logo span {
+    color: #E23744;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #E6E2DF !important;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border-bottom: none !important;
+}
+
+.nav-links li a:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Active navigation item styling */
+.nav-links li.active a {
+    color: #E23744 !important;
+    background-color: rgba(226, 55, 68, 0.1) !important;
+}
+
+/* Profile Dropdown Component */
+.profile-dropdown-container {
+    position: relative;
+    list-style: none;
+}
+
+.profile-dropdown-btn {
+    background: rgba(226, 55, 68, 0.1);
+    color: #E23744;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(226, 55, 68, 0.3);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.profile-dropdown-btn:hover {
+    background: rgba(226, 55, 68, 0.15);
+}
+
+.profile-dropdown-menu {
+    position: absolute;
+    top: 130%;
+    right: 0;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(26, 22, 21, 0.08);
+    box-shadow: 0 10px 25px rgba(26, 22, 21, 0.08);
+    width: 160px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1100;
+}
+
+.profile-dropdown-menu.show {
+    display: flex;
+}
+
+.profile-dropdown-menu a {
+    color: #1A1615 !important;
+    padding: 12px 18px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    border-radius: 0 !important;
+    background: none !important;
+    transition: background 0.2s ease !important;
+    border-bottom: none !important;
+}
+
+.profile-dropdown-menu a:hover {
+    background: rgba(226, 55, 68, 0.05) !important;
+    color: #E23744 !important;
+}
+
+@media(max-width: 768px) {
+    .navbar {
+        padding: 15px 4%;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

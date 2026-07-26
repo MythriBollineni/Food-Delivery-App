@@ -34,8 +34,8 @@ body.success-page {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 20px;
+    min-height: calc(100vh - 70px);
+    padding: 40px 20px;
 }
 
 .success-card {
