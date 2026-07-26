@@ -93,11 +93,10 @@ User loggedUser = (User) session.getAttribute("loggedUser");
         <h1 style="font-size: 36px; font-weight: 800; color: #1A1615; margin: 0; text-align: left;">Popular restaurants near you</h1>
     </div>
 
-    <!-- Filter Pills -->
     <div class="filter-pills-container">
         <span class="filter-pill active" onclick="filterAll(this)">All</span>
         <span class="filter-pill" onclick="filterRating(this)">Rating 4.0+</span>
-        <span class="filter-pill" onclick="filterDelivery(this)">⚡ Fast Delivery (< 30 mins)</span>
+        <span class="filter-pill" onclick="filterDelivery(this)"><i class="fa-solid fa-bolt" style="color: #F5A623; margin-right: 4px;"></i> Fast Delivery (&lt; 30 mins)</span>
         <span class="filter-pill" onclick="filterOffers(this)">Great Offers</span>
     </div>
 

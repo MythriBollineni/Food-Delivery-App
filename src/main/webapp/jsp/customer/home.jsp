@@ -1,8 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ page import="com.fooddelivery.model.User" %>
+<%@ page import="com.fooddelivery.model.Restaurant" %>
+<%@ page import="com.fooddelivery.dao.RestaurantDAO" %>
+<%@ page import="java.util.ArrayList" %>
 <%
 User loggedUser = (User) session.getAttribute("loggedUser");
+
+RestaurantDAO restDAO = new RestaurantDAO();
+ArrayList<Restaurant> allRests = restDAO.getAllRestaurants();
+ArrayList<Restaurant> teaserRests = new ArrayList<>();
+if (allRests != null) {
+    for (int i = 0; i < Math.min(3, allRests.size()); i++) {
+        teaserRests.add(allRests.get(i));
+    }
+}
 %>
 <!DOCTYPE html>
 <html>
@@ -447,11 +459,72 @@ User loggedUser = (User) session.getAttribute("loggedUser");
         <div style="display: flex; gap: 12px; margin-bottom: 30px; overflow-x: auto; padding-bottom: 5px;">
             <span style="background: #E23744; color: white; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 700; cursor: pointer;">All</span>
             <span style="background: white; color: #1A1615; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 600; border: 1px solid rgba(26,22,21,0.06); cursor: pointer;">Rating 4.0+</span>
-            <span style="background: white; color: #1A1615; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 600; border: 1px solid rgba(26,22,21,0.06); cursor: pointer;">⚡ Fast Delivery (< 30 mins)</span>
+            <span style="background: white; color: #1A1615; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 600; border: 1px solid rgba(26,22,21,0.06); cursor: pointer;"><i class="fa-solid fa-bolt" style="color: #F5A623; margin-right: 4px;"></i> Fast Delivery (&lt; 30 mins)</span>
             <span style="background: white; color: #1A1615; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 600; border: 1px solid rgba(26,22,21,0.06); cursor: pointer;">Great Offers</span>
             <span style="background: white; color: #1A1615; padding: 8px 18px; border-radius: 30px; font-size: 13px; font-weight: 600; border: 1px solid rgba(26,22,21,0.06); cursor: pointer;">Pure Veg & Healthy</span>
         </div>
+
+        <!-- Teaser Restaurant Grid -->
+        <div class="restaurant-container" style="margin-top: 20px;">
+            <% if (!teaserRests.isEmpty()) { %>
+                <% for(Restaurant restaurant : teaserRests){ %>
+                    <div class="restaurant-card">
+                        <div class="restaurant-image-container">
+                            <div class="rating-badge">
+                                <i class="fa-solid fa-star"></i> <%=restaurant.getRating()%>
+                            </div>
+                            
+                            <div class="heart" onclick="toggleHeart(this)">
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+
+                            <img src="${pageContext.request.contextPath}/images/restaurants/<%=restaurant.getImage()%>"
+                                 alt="<%=restaurant.getRestaurantName()%>">
+                            
+                            <div class="offer">
+                                Flat 40% OFF
+                            </div>
+                        </div>
+
+                        <div class="restaurant-details">
+                            <h3><%=restaurant.getRestaurantName()%></h3>
+                            
+                            <div class="restaurant-meta">
+                                <span class="delivery-time">
+                                    <i class="fa-regular fa-clock"></i> <%=restaurant.getDeliveryTime()%>
+                                </span>
+                                <span class="restaurant-phone">
+                                    <i class="fa-solid fa-phone"></i> <%=restaurant.getPhone()%>
+                                </span>
+                            </div>
+
+                            <p class="address">
+                                <i class="fa-solid fa-location-dot"></i> <%=restaurant.getAddress()%>
+                            </p>
+
+                            <a href="${pageContext.request.contextPath}/MenuServlet?restaurantId=<%=restaurant.getRestaurantId()%>"
+                               class="view-btn">
+                               View Menu
+                            </a>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
     </section>
+
+    <script>
+    function toggleHeart(element) {
+        let icon = element.querySelector("i");
+        if(icon.classList.contains("fa-regular")) {
+            icon.classList.remove("fa-regular");
+            icon.classList.add("fa-solid", "liked");
+        } else {
+            icon.classList.remove("fa-solid", "liked");
+            icon.classList.add("fa-regular");
+        }
+    }
+    </script>
 
     <!-- Marketing / Badges banner -->
     <section class="feature-badges-section">
