@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --bg-primary: #F5F7FA;       /* Clean Soft Blue-Gray background */
+    --bg-primary: #FAF6F0;       /* Warm Cream / Linen background */
     --bg-card: #FFFFFF;          /* Pure White for cards */
-    --text-primary: #1E2022;     /* Modern Dark Slate */
-    --text-secondary: #677788;   /* Muted Slate Grey */
-    --brand-accent: #E25822;     /* Premium Burnt Orange / Coral */
-    --brand-gradient: linear-gradient(135deg, #E25822 0%, #F5A623 100%);
-    --navbar-bg: #FFFFFF;        /* Clean White Navbar */
-    --navbar-text: #1E2022;      /* Dark text for navbar */
-    --border-color: rgba(30, 32, 34, 0.08);
+    --text-primary: #1A1615;     /* Dark Charcoal Black */
+    --text-secondary: #6B625E;   /* Muted warm grey */
+    --brand-accent: #E23744;     /* Premium Crimson Red */
+    --brand-gradient: linear-gradient(135deg, #E23744 0%, #F47B20 100%);
+    --navbar-bg: #1A1615;        /* Dark Navbar background */
+    --navbar-text: #E6E2DF;      /* Light text for dark navbar */
+    --border-color: rgba(26, 22, 21, 0.08);
 }
 
 /* Global Reset */
@@ -43,8 +43,8 @@ body.restaurants-page, body.menu-page, body.home-page {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px rgba(30, 32, 34, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .logo {
@@ -62,7 +62,7 @@ body.restaurants-page, body.menu-page, body.home-page {
 .logo i {
     color: var(--brand-accent);
     -webkit-text-fill-color: initial;
-    text-shadow: 0 2px 10px rgba(226, 88, 34, 0.2);
+    text-shadow: 0 2px 10px rgba(226, 55, 68, 0.3);
 }
 
 .nav-links {
@@ -86,13 +86,13 @@ body.restaurants-page, body.menu-page, body.home-page {
 }
 
 .nav-links a:hover {
-    color: var(--brand-accent);
-    background-color: rgba(226, 88, 34, 0.05);
+    color: #FFFFFF;
+    background-color: rgba(226, 55, 68, 0.15);
 }
 
 .nav-links li.user-badge {
-    background: rgba(226, 88, 34, 0.08);
-    color: var(--brand-accent);
+    background: rgba(226, 55, 68, 0.12);
+    color: #FF7B84;
     padding: 8px 18px;
     border-radius: 30px;
     font-size: 14px;
@@ -100,7 +100,7 @@ body.restaurants-page, body.menu-page, body.home-page {
     display: flex;
     align-items: center;
     gap: 8px;
-    border: 1px solid rgba(226, 88, 34, 0.15);
+    border: 1px solid rgba(226, 55, 68, 0.3);
 }
 
 /* Hero Section */

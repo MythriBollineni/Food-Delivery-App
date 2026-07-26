@@ -478,7 +478,7 @@ if (allRests != null) {
                                 <i class="fa-regular fa-heart"></i>
                             </div>
 
-                            <img src="${pageContext.request.contextPath}/images/restaurants/<%=restaurant.getImage()%>"
+                            <img src="${pageContext.request.contextPath}/images/restaurants/<%=restaurant.getImage()%>?v=1.3"
                                  alt="<%=restaurant.getRestaurantName()%>">
                             
                             <div class="offer">

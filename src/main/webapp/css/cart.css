@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --bg-primary: #F5F7FA;       /* Clean Soft Blue-Gray background */
-    --bg-card: #FFFFFF;          /* Pure White for cards */
-    --text-primary: #1E2022;     /* Modern Dark Slate */
-    --text-secondary: #677788;   /* Muted Slate Grey */
-    --brand-accent: #E25822;     /* Premium Burnt Orange / Coral */
-    --brand-gradient: linear-gradient(135deg, #E25822 0%, #F5A623 100%);
-    --navbar-bg: #FFFFFF;        /* Clean White Navbar */
-    --navbar-text: #1E2022;      /* Dark text for navbar */
-    --border-color: rgba(30, 32, 34, 0.08);
+    --bg-primary: #FAF6F0;       /* Warm Cream Linen background */
+    --bg-card: #FFFFFF;          /* Pure White cards */
+    --text-primary: #1A1615;     /* Dark Charcoal Black */
+    --text-secondary: #6B625E;   /* Muted warm grey */
+    --brand-accent: #E23744;     /* Premium Crimson Red */
+    --brand-gradient: linear-gradient(135deg, #E23744 0%, #F47B20 100%);
+    --navbar-bg: #1A1615;        /* Dark navbar background */
+    --border-color: rgba(26, 22, 21, 0.08);
 }
 
 * {

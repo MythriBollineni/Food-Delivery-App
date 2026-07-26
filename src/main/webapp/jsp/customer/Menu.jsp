@@ -312,7 +312,7 @@ if (restaurantId > 0) {
     <!-- Restaurant Header Card -->
     <% if (restaurant != null) { %>
         <div class="restaurant-header-card">
-            <img src="${pageContext.request.contextPath}/images/restaurants/<%=restaurant.getImage()%>"
+            <img src="${pageContext.request.contextPath}/images/restaurants/<%=restaurant.getImage()%>?v=1.3"
                  alt="<%=restaurant.getRestaurantName()%>"
                  class="rest-header-image">
             <div class="rest-header-details">
