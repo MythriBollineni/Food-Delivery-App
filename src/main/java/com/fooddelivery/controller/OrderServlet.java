@@ -2,9 +2,9 @@ package com.fooddelivery.controller;
 
 import java.io.IOException;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.*;
 
 import com.fooddelivery.dao.OrderDAO;
 import com.fooddelivery.dao.OrderItemDAO;
