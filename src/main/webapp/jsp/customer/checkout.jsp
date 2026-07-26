@@ -40,8 +40,15 @@ int totalItems = cart.getItems().size();
             <li><a href="${pageContext.request.contextPath}/RestaurantServlet"><i class="fa-solid fa-utensils"></i> Restaurants</a></li>
             <li><a href="${pageContext.request.contextPath}/CartServlet"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
             <% if (loggedUser != null) { %>
-                <li><a href="${pageContext.request.contextPath}/OrderHistoryServlet"><i class="fa-solid fa-receipt"></i> Orders</a></li>
-                <li class="user-badge"><i class="fa-solid fa-user"></i> Hi, <%= loggedUser.getName() %></li>
+                <li class="profile-dropdown-container">
+                    <button class="profile-dropdown-btn" onclick="toggleProfileDropdown(event)">
+                        <i class="fa-solid fa-user"></i> Hi, <%= loggedUser.getName() %> <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i>
+                    </button>
+                    <div class="profile-dropdown-menu" id="profileDropdownMenu">
+                        <a href="${pageContext.request.contextPath}/OrderHistoryServlet"><i class="fa-solid fa-receipt"></i> My Orders</a>
+                        <a href="${pageContext.request.contextPath}/LogoutServlet"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                    </div>
+                </li>
             <% } %>
         </ul>
     </nav>
@@ -157,5 +164,18 @@ int totalItems = cart.getItems().size();
 
     </div>
 
+    <script>
+    function toggleProfileDropdown(event) {
+        event.stopPropagation();
+        let menu = document.getElementById("profileDropdownMenu");
+        if(menu) menu.classList.toggle("show");
+    }
+    window.addEventListener("click", function() {
+        let menu = document.getElementById("profileDropdownMenu");
+        if(menu && menu.classList.contains("show")) {
+            menu.classList.remove("show");
+        }
+    });
+    </script>
 </body>
 </html>

@@ -293,9 +293,9 @@ h1[align="center"], .menu-title {
 
 .restaurant-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 40px;
-    padding: 20px 8% 80px 8%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px 8% 10px 8%;
     background-color: transparent;
 }
 
@@ -618,5 +618,76 @@ h1[align="center"], .menu-title {
     .restaurant-container, .menu-container {
         padding: 20px 4% 60px 4%;
         gap: 24px;
+        grid-template-columns: 1fr;
     }
+}
+
+@media(max-width: 991px) {
+    .restaurant-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Profile Dropdown Styling */
+.profile-dropdown-container {
+    position: relative;
+    list-style: none;
+}
+
+.profile-dropdown-btn {
+    background: rgba(226, 55, 68, 0.1);
+    color: #E23744;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(226, 55, 68, 0.3);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.profile-dropdown-btn:hover {
+    background: rgba(226, 55, 68, 0.15);
+}
+
+.profile-dropdown-menu {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(26, 22, 21, 0.08);
+    box-shadow: 0 10px 25px rgba(26, 22, 21, 0.08);
+    width: 160px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1100;
+}
+
+.profile-dropdown-menu.show {
+    display: flex;
+}
+
+.profile-dropdown-menu a {
+    color: #1A1615 !important;
+    padding: 12px 18px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    border-radius: 0 !important;
+    background: none !important;
+    transition: background 0.2s ease !important;
+}
+
+.profile-dropdown-menu a:hover {
+    background: rgba(226, 55, 68, 0.05) !important;
+    color: #E23744 !important;
 }

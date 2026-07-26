@@ -29,18 +29,12 @@ public class LoginServlet extends HttpServlet {
         User user = dao.loginUser(email, password);
 
         if(user != null) {
-
             HttpSession session = request.getSession();
-
             session.setAttribute("loggedUser", user);
-
             response.sendRedirect(request.getContextPath() + "/RestaurantServlet");
         } else {
-
-            response.getWriter().println("<h2>Invalid Email or Password</h2>");
-
+            response.sendRedirect(request.getContextPath() + "/jsp/auth/login.jsp?status=invalid");
         }
-
     }
 
 }
