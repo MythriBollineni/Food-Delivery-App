@@ -69,7 +69,7 @@ if (allRests != null) {
 }
 
 .hero-search-bar-form {
-    max-width: 500px;
+    max-width: 620px;
     margin-bottom: 30px;
 }
 
@@ -96,7 +96,7 @@ if (allRests != null) {
     font-size: 15px;
     color: #1A1615;
     flex: 1;
-    padding: 10px 0;
+    padding: 10px 15px 10px 0;
 }
 
 .hero-search-bar button {
@@ -378,7 +378,7 @@ if (allRests != null) {
             <form action="${pageContext.request.contextPath}/RestaurantServlet" method="get" class="hero-search-bar-form">
                 <div class="hero-search-bar">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" name="search" placeholder="Search by restaurant name or cuisine...">
+                    <input type="text" name="search" placeholder="Search restaurants or cuisines...">
                     <button type="submit">Find Food</button>
                 </div>
             </form>
