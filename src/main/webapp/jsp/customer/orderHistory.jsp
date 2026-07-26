@@ -18,7 +18,7 @@ User loggedUser = (User) session.getAttribute("loggedUser");
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/orderHistory.css">
 </head>
-<body>
+<body class="orders-page">
 
     <!-- Navbar -->
     <nav class="navbar">
