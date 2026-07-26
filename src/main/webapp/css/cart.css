@@ -5,8 +5,8 @@
     --bg-card: #FFFFFF;          /* Pure White cards */
     --text-primary: #1A1615;     /* Dark Charcoal Black */
     --text-secondary: #6B625E;   /* Muted warm grey */
-    --brand-accent: #E23744;     /* Premium Crimson Red */
-    --brand-gradient: linear-gradient(135deg, #E23744 0%, #F47B20 100%);
+    --brand-accent: #E65A28;     /* Premium Burnt Orange */
+    --brand-gradient: linear-gradient(135deg, #E65A28 0%, #F47B20 100%);
     --navbar-bg: #1A1615;        /* Dark navbar background */
     --border-color: rgba(26, 22, 21, 0.08);
 }
@@ -28,76 +28,6 @@ body {
 body.cart-page {
     background-color: var(--bg-primary);
     background-image: none;
-}
-
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--navbar-bg);
-    padding: 16px 8%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-.logo {
-    background: var(--brand-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 28px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-}
-
-.logo i {
-    color: var(--brand-accent);
-    -webkit-text-fill-color: initial;
-    text-shadow: 0 2px 10px rgba(226, 55, 68, 0.3);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: #E6E2DF;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 30px;
-    transition: all 0.25s ease;
-}
-
-.nav-links a:hover {
-    color: #FFFFFF;
-    background-color: rgba(226, 55, 68, 0.15);
-}
-
-.nav-links li.user-badge {
-    background: rgba(226, 55, 68, 0.12);
-    color: #FF7B84;
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid rgba(226, 55, 68, 0.3);
 }
 
 /* Cart Page styles */

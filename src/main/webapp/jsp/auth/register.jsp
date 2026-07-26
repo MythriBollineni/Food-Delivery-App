@@ -64,11 +64,11 @@ body {
 }
 
 .promo-panel .logo span {
-    color: #E23744;
+    color: #E65A28;
 }
 
 .promo-panel .logo i {
-    color: #E23744;
+    color: #E65A28;
 }
 
 .promo-content h1 {
@@ -81,7 +81,7 @@ body {
 
 .promo-content .tagline {
     font-size: 14px;
-    color: #E23744;
+    color: #E65A28;
     font-weight: 700;
     margin-bottom: 25px;
     text-transform: uppercase;
@@ -105,8 +105,8 @@ body {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background-color: rgba(226, 55, 68, 0.1);
-    color: #E23744;
+    background-color: rgba(230, 90, 40, 0.1);
+    color: #E65A28;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,7 +153,7 @@ body {
     top: 35%;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #E23744 0%, #F47B20 100%);
+    background: linear-gradient(135deg, #E65A28 0%, #F47B20 100%);
     border-radius: 50%;
     color: #ffffff;
     display: flex;
@@ -162,7 +162,7 @@ body {
     align-items: center;
     font-size: 10px;
     font-weight: 800;
-    box-shadow: 0 4px 15px rgba(226, 55, 68, 0.3);
+    box-shadow: 0 4px 15px rgba(230, 90, 40, 0.3);
     z-index: 10;
     border: 3px solid #ffffff;
 }
@@ -275,13 +275,13 @@ body {
 }
 
 .input-wrapper input:focus, .input-wrapper textarea:focus {
-    border-color: #E23744;
+    border-color: #E65A28;
     background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(226, 55, 68, 0.1);
+    box-shadow: 0 0 0 4px rgba(230, 90, 40, 0.1);
 }
 
 .input-wrapper input:focus + .input-icon, .input-wrapper textarea:focus + .input-icon {
-    color: #E23744;
+    color: #E65A28;
 }
 
 .submit-btn {
@@ -289,12 +289,12 @@ body {
     padding: 13px;
     border: none;
     border-radius: 12px;
-    background: linear-gradient(135deg, #E23744 0%, #F47B20 100%);
+    background: linear-gradient(135deg, #E65A28 0%, #F47B20 100%);
     color: #ffffff;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(226, 55, 68, 0.2);
+    box-shadow: 0 6px 18px rgba(230, 90, 40, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -304,7 +304,7 @@ body {
 }
 
 .submit-btn:hover {
-    box-shadow: 0 8px 22px rgba(226, 55, 68, 0.35);
+    box-shadow: 0 8px 22px rgba(230, 90, 40, 0.35);
     transform: translateY(-1px);
 }
 
@@ -374,7 +374,7 @@ body {
 
 .links a {
     text-decoration: none;
-    color: #E23744;
+    color: #E65A28;
     font-weight: 700;
 }
 

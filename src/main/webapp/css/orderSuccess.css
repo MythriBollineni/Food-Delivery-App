@@ -5,8 +5,8 @@
     --bg-card: #FFFFFF;          /* Pure White cards */
     --text-primary: #1A1615;     /* Dark Charcoal Black */
     --text-secondary: #6B625E;   /* Muted warm grey */
-    --brand-accent: #E23744;     /* Premium Crimson Red */
-    --brand-gradient: linear-gradient(135deg, #E23744 0%, #F47B20 100%);
+    --brand-accent: #E65A28;     /* Premium Burnt Orange */
+    --brand-gradient: linear-gradient(135deg, #E65A28 0%, #F47B20 100%);
     --navbar-bg: #1A1615;        /* Dark navbar background */
     --border-color: rgba(26, 22, 21, 0.08);
 }
